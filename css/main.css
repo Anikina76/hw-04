@@ -12,8 +12,8 @@
 	--link-text-color: #434455;
 	--text-footer: #F4F4FD;
 	--teamcard-background-color: #F4F4FD;
-	--top-line: #E7E9FC
-	--l-gra: ;
+	--top-line: #E7E9FC;
+	--l-gra: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
 }
 
 *,
@@ -189,23 +189,17 @@ img {
 /* ------------------hero image------------ */
 
 .section-hero {
+	background: var(--background-color-accent);
 	max-width: 1440px;
 	height: 600px;
 	margin-left: auto;
 	margin-right: auto;
-	background-image: linear-gradient(
-	rgba(46, 47, 66, 0.7), 
-	rgba(46, 47, 66, 0.7)), 
+	background-image:var(--l-gra), 
 	url("..//images/hero/people-office.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-
-
-	display: block;
 	text-align: center;
-
-	background: var(--background-color-accent);
 	padding-top: 188px;
 	padding-bottom: 188px;
 }
@@ -253,14 +247,46 @@ img {
 .benefits {
 	padding: 120px 0;
 }
+.benefits-title {
+	margin-top: 8px;
+}
 
 .benefits-list {
 	display: flex;
+	gap: 24px;
 }
 
 .benefits-list .item + .item {
 	margin-left: 24px;
 }
+
+.item-benefits::before {
+	display: block;
+	content: "";
+	height: 112px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #F4F4FD;
+	background-size: 64px;
+}
+
+.item-antenna::before {
+	background-image: url(../images/icon/antenna\ 1.svg);
+}
+
+.item-clock::before {
+	background-image: url(../images/icon/clock\ 1.svg);
+}
+
+.item-diagram::before {
+	background-image: url(../images/icon/diagram\ 1.svg);
+} 
+
+.item-astronaut::before {
+	background-image: url(../images/icon/astronaut.svg);
+
+} 
 
 .benefits-title {
 	font-weight: 500;
@@ -329,7 +355,8 @@ img {
 	padding: 32px 16px;
 }
 
-.teamcard-title {
+.teamcard-title,
+.title {
 	padding-bottom: 72px;
 	text-align: center;
 	font-weight: 700;
@@ -353,6 +380,7 @@ img {
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	color: var(--link-text-color);	
+	margin-bottom: 8px;
 }
 
 .foto {
@@ -375,12 +403,85 @@ img {
   margin-right: 0;
 }
 
-/* --------------------FOOTER----------------- */
+.teamcard-soc-list {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+}
+
+.teamcard-soc-item {
+	width: 40px;
+	height: 40px;
+}
+.teamcard-soc-link {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #4D5AE5;
+}
+
+.teamcard-soc-link:is(:hover, :focus) {
+	background-color: #404BBF;
+}
+
+/* ---------------customers------------ */
+
+.customers-title {
+	padding-top: 130px;
+	padding-bottom: 72px;
+	text-align: center;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: var(--primary-text-color)
+}
+.customers-list {
+	padding-bottom: 120px;
+	justify-content: center;
+	display: flex;
+	gap: 24px;
+}
+
+.customers-item {
+	width: calc((100% - 168px) / 6);
+	height: 90px;
+}
+.customers-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #8E8F99;
+	border-radius: 4px;
+	color: #8E8F99;
+}
+
+.customers-link:hover,
+.customers-link:focus {
+	border-color: #404BBF;
+	color: #404BBF ;
+}
+
+.customers-icon {
+	fill: currentColor}
+
+/* --------------------FOOTER-----------------  */
 
 .footer {
+	display: flex;
 	background: var(--background-color-accent);
 	padding-top: 100px;
 	padding-bottom: 100px;
+}
+.container-text {
+	width: 264px;
+	margin-left: 0;
+	margin-right: 120px;
 }
 
 .footer-link {
@@ -398,7 +499,48 @@ img {
 	letter-spacing: 0.02em;
 	color: var(--text-footer);
 }
+.filter-button:hover,
+.filter-button:focus {
+	color: var(--title-text-color);
+	background: var(--hover-focus-color);
+}
 
+-----
+
+.socmedia {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.title-footer {
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 1.28;
+	letter-spacing: 0.02em;
+	color: #FFFFFF;
+	}
+
+.footer-list {
+	display: flex;
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.item-socialmedia-footer {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFFFFF1A; 
+}
+
+.footer-soc-icon {}
+
+.item-socialmedia-footer:is(:hover, :focus) {
+	background-color:#31D0AA;
+}
 
 /* -----------------Filters portfolio - portfolio------------ */
 
@@ -432,23 +574,23 @@ img {
 	color: var(--filter-btn-color);
 }
 
-.filter-button:hover,
-.filter-button:focus {
-	color: var(--title-text-color);
-	background: var(--hover-focus-color);
-}
-
 
 /* -------section gallery portfolio. прихований заголовок-------- */
 
 .gallery-list {
 	display: flex;
 	flex-wrap: wrap;
+
 }
 
 .gallery-element {
 	width: calc((100% - 48px) / 3);
 	margin-right: 24px;
+}
+
+.gallery-element:hover,
+.gallery-element:focus {
+	box-shadow: 1px 8px rgba(46, 47, 66, 0.08);
 }
 
 .gallery-element:nth-child(3n) {
@@ -484,3 +626,6 @@ img {
 	padding: 32px 32px;
 
 }
+ .headline-subtitle {
+
+ }
